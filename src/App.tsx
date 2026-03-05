@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Modal, Button, Toast, Checkbox, Avatar } from 'ayna-ui'
 import { useTasks } from './hooks/useTasks'
 import { TaskCard } from './components/TaskCard'
