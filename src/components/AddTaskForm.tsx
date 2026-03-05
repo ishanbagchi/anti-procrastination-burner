@@ -64,6 +64,7 @@ export const AddTaskForm: React.FC<AddTaskFormProps> = ({
 					placeholder="What needs to be done?"
 					fullWidth
 					disabled={!canAdd}
+					autoFocus
 					maxLength={100}
 				/>
 			</S.FormGroup>

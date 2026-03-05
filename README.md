@@ -1,8 +1,8 @@
-# 🔥 Anti-Procrastination Burner
+# 🔥 The Fuse
 
-A unique todo app that forces you to prioritize through scarcity. Built with React, TypeScript, and [Ayna UI](https://github.com/aynaui/ayna-ui).
+A unique productivity app that forces you to prioritize through scarcity. Built with React, TypeScript, and [Ayna UI](https://github.com/aynaui/ayna-ui).
 
-![Hero Image Placeholder](https://via.placeholder.com/800x400/667eea/ffffff?text=Anti-Procrastination+Burner)
+![Hero Image Placeholder](https://via.placeholder.com/800x400/0ea5e9/ffffff?text=The+Fuse)
 
 ## 🎯 The Problem
 
@@ -10,7 +10,7 @@ Traditional todo lists grow forever, becoming sources of anxiety rather than pro
 
 ## 💡 The Solution
 
-The Anti-Procrastination Burner takes a radical approach:
+The Fuse takes a radical approach:
 
 ### **The 3-Task Limit**
 

@@ -30,8 +30,13 @@ export const TaskCard: React.FC<TaskCardProps> = ({
 
 		if (remaining <= 0) return '🔥 BURNING!'
 
-		const minutes = Math.floor(remaining / 60000)
+		const hours = Math.floor(remaining / 3600000)
+		const minutes = Math.floor((remaining % 3600000) / 60000)
 		const seconds = Math.floor((remaining % 60000) / 1000)
+
+		if (hours > 0) {
+			return `${hours}h ${minutes}m left`
+		}
 
 		if (minutes === 0) {
 			return `${seconds}s left`
@@ -65,30 +70,24 @@ export const TaskCard: React.FC<TaskCardProps> = ({
 			)}
 
 			{task.status === 'active' && (
-				<>
-					<S.FuseContainer>
-						<S.FuseProgress
-							$progress={task.burnProgress}
-							$isBurning={isBurning}
-						/>
-					</S.FuseContainer>
+			<S.FuseContainer>
+				<S.FuseProgress
+					$progress={task.burnProgress}
+					$isBurning={isBurning}
+				/>
+			</S.FuseContainer>
+		)}
 
-					<S.TimeInfo>
-						<span>Created: {formatCreatedDate()}</span>
-						<S.TimeLabel $isUrgent={task.burnProgress > 75}>
-							{getTimeRemaining()}
-						</S.TimeLabel>
-					</S.TimeInfo>
-				</>
+		<S.TimeInfo>
+			<span>Created: {formatCreatedDate()}</span>
+			{task.status === 'active' ? (
+				<S.TimeLabel $isUrgent={task.burnProgress > 75}>
+					{getTimeRemaining()}
+				</S.TimeLabel>
+			) : (
+				<span>{task.timeframeMinutes} min timeframe</span>
 			)}
-
-			{!task.status.match(/burned|completed/) && (
-				<S.TimeInfo>
-					<span>Created: {formatCreatedDate()}</span>
-					<span>{task.timeframeMinutes} min timeframe</span>
-				</S.TimeInfo>
-			)}
-
+		</S.TimeInfo>
 			{showActions && task.status === 'active' && (
 				<S.ButtonGroup>
 					<Button

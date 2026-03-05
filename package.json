@@ -1,8 +1,8 @@
 {
-	"name": "anti-procrastination-burner",
+	"name": "the-fuse",
 	"version": "1.0.0",
 	"private": true,
-	"description": "An anti-procrastination todo app that limits you to 3 tasks and burns incomplete ones",
+	"description": "A productivity app that limits you to 3 tasks with time-based fuses that burn when incomplete",
 	"type": "module",
 	"scripts": {
 		"dev": "vite",
