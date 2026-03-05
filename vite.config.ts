@@ -12,6 +12,8 @@ export default defineConfig({
 						{
 							displayName: true,
 							fileName: true,
+							ssr: true,
+							pure: true,
 						},
 					],
 				],
