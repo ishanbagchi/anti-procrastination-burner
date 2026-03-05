@@ -70,24 +70,24 @@ export const TaskCard: React.FC<TaskCardProps> = ({
 			)}
 
 			{task.status === 'active' && (
-			<S.FuseContainer>
-				<S.FuseProgress
-					$progress={task.burnProgress}
-					$isBurning={isBurning}
-				/>
-			</S.FuseContainer>
-		)}
-
-		<S.TimeInfo>
-			<span>Created: {formatCreatedDate()}</span>
-			{task.status === 'active' ? (
-				<S.TimeLabel $isUrgent={task.burnProgress > 75}>
-					{getTimeRemaining()}
-				</S.TimeLabel>
-			) : (
-				<span>{task.timeframeMinutes} min timeframe</span>
+				<S.FuseContainer>
+					<S.FuseProgress
+						$progress={task.burnProgress}
+						$isBurning={isBurning}
+					/>
+				</S.FuseContainer>
 			)}
-		</S.TimeInfo>
+
+			<S.TimeInfo>
+				<span>Created: {formatCreatedDate()}</span>
+				{task.status === 'active' ? (
+					<S.TimeLabel $isUrgent={task.burnProgress > 75}>
+						{getTimeRemaining()}
+					</S.TimeLabel>
+				) : (
+					<span>{task.timeframeMinutes} min timeframe</span>
+				)}
+			</S.TimeInfo>
 			{showActions && task.status === 'active' && (
 				<S.ButtonGroup>
 					<Button
